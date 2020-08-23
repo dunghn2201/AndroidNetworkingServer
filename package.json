@@ -1,7 +1,7 @@
 {
   "name": "Test1",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "author": "Dunghn",
   "license": "MIT",
   "scripts": {
@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "bcrypt": "^5.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
     "email-existence": "^0.1.6",
     "express": "^4.17.1",
     "mongoose": "^5.9.25",

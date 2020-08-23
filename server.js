@@ -1,17 +1,18 @@
 const express = require("express");
 const http = require("http");
 const app = express();
+const bodyParser = require("body-parser");
 const path = require("path");
-const PORT = process.env.PORT || 3000;
-const userRouter = require("./src/routers/user.router");
-const productRouter = require("./src/routers/product.router");
+const PORT = process.env.PORT || 3000 || process.env.IP;
+const userRouter = require("./routers/user.router");
+const productRouter = require("./routers/product.router");
 //cấu hình mongodb
-const connectDB = require("./src/config/db");
+const connectDB = require("./config/db");
 connectDB();
 
 //cấu hình form gửi đi
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 const publicPath = path.resolve(__dirname, "public");
 
